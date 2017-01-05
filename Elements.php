@@ -20,7 +20,7 @@ $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader, array(
     'auto_reload' => true
 ));
-$template = $twig->loadTemplate('Home.twig.html');
+$template = $twig->loadTemplate('Home.twig');
 
 $parametersToTwig = array("collection" => $Elements, "text" => "");
 echo $template->render($parametersToTwig);
