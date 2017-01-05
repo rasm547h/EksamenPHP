@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+<h2>Option #1</h2>
+<form action="" method="POST">
+    <!-- Id <input name="identity" type="number"> -->
+    String1 <input name="string1" type="text">
+    <input value="Create Element" type="submit">
+<h2>Option #2</h2>
+<form action="Home.php" method="POST">
+    <select name="Select a operation">
+          <option value="O1">Operation 1</option>
+          <option value="O2">Operation 2</option>
+          <option value="O3">Operation 3</option>
+          <option value="O4">Operation 4</option>
+    </select>
+    <input value="Execute operation" type="submit">
+</form>
+<h2>Option #3</h2>
+<form action="Elements.php" method="POST">
+    <input name="AllElementsButton" type="submit" value="View all element">
+</form>
+{% if collection is empty %}
+{{ text }}
+{% else %}
+    {% for element in collection %}
+        {{ element.Identity }},
+        {{ element.String1 }}
+    {% endfor %}
+{% endif %}
+
+<h2>Option #4</h2>
+<form action="Element.php" method="post">
+    Identity <input name="param" type="text">
+    <input value="Find specific element" type="submit">
+</form>
+{% if element is null %}
+    {{ text }}
+{% else %}
+    {{ element.Identity }}
+    {{ element.String1}}
+{% endif %}
+</form>
+</body>
+</html>
